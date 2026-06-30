@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Digital-Nurture-JavaFSE-main.iml" filepath="$PROJECT_DIR$/.idea/Digital-Nurture-JavaFSE-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 1/Exercise 1.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 1/Exercise 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 2/Exercise 2.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 2/Exercise 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 3/Exercise 3.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/design-pattern-principles/Exercise 3/Exercise 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise1/Exercise1.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise1/Exercise1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise2/Exercise2.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise2/Exercise2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise3/Exercise3.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise3/Exercise3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise7/Exercise7.iml" filepath="$PROJECT_DIR$/Java FSE/Deepskilling/Engineering concepts/algorithm-data-structure/Exercise7/Exercise7.iml" />
+    </modules>
+  </component>
+</project>
