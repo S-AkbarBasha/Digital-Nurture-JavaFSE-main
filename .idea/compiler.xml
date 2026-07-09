@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LibraryManagement" />
         <module name="SpringDataJPAWithSpringBootHibernate" />
+        <module name="spring-learn" />
         <module name="TDD" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringDataJPAWithSpringBootHibernate" options="-parameters" />
+      <module name="spring-learn" options="-parameters" />
     </option>
   </component>
 </project>
