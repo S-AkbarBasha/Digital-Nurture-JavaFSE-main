@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Java FSE/Deepskilling/JUnit, Mockito and SL4J/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Deepskilling/TDD/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Deepskilling/spring core and maven/LibraryManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Deepskilling/SpringDataJPAWithSpringBootHibernate/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Deepskilling/Spring REST using Spring Boot 3/spring-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Microservices with Spring Boot 3 and Spring Cloud/account/account/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Microservices with Spring Boot 3 and Spring Cloud/account/pom.xml" />
+        <option value="$PROJECT_DIR$/Java FSE/Microservices with Spring Boot 3 and Spring Cloud/loan/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
