@@ -1,0 +1,50 @@
+<div class="page-title">
+  <span class="badge">EX 3</span>
+  <h1>Data Binding</h1>
+  <p>All four types of Angular data binding in action</p>
+</div>
+
+<!-- 1. Interpolation -->
+<div class="card">
+  <h2>1️⃣ Interpolation <code style="font-size:0.8rem; color:#fbbf24">{{ '{{' }} expression {{ '}}' }}</code></h2>
+  <p><strong class="highlight">Title:</strong> {{ title }}</p>
+  <p><strong class="highlight">Date:</strong> {{ currentDate }}</p>
+  <p><strong class="highlight">Expression:</strong> {{ 10 + 5 * 2 }}</p>
+</div>
+
+<!-- 2. Property Binding -->
+<div class="card">
+  <h2>2️⃣ Property Binding <code style="font-size:0.8rem; color:#fbbf24">[property]="value"</code></h2>
+  <img [src]="imageUrl" [alt]="altText" style="height:60px; margin:8px 0" />
+  <p><strong class="highlight">[disabled]:</strong></p>
+  <button class="btn" [disabled]="isButtonDisabled">{{ isButtonDisabled ? 'Disabled' : 'Enabled' }}</button>
+  &nbsp;
+  <button class="btn" (click)="toggleButton()" style="background:rgba(99,102,241,0.3)">Toggle Disabled</button>
+</div>
+
+<!-- 3. Event Binding -->
+<div class="card">
+  <h2>3️⃣ Event Binding <code style="font-size:0.8rem; color:#fbbf24">(event)="handler()"</code></h2>
+  <button class="btn" (click)="onClick()">Click Me!</button>
+  <p style="margin-top:12px; color:#4ade80">{{ message }}</p>
+  <p style="color:#64748b; font-size:0.85rem">Total clicks: <span class="tag">{{ clickCount }}</span></p>
+</div>
+
+<!-- 4. Two-Way Binding -->
+<div class="card">
+  <h2>4️⃣ Two-Way Binding <code style="font-size:0.8rem; color:#fbbf24">[(ngModel)]</code></h2>
+  <div class="form-group">
+    <label>Name:</label>
+    <input [(ngModel)]="name" placeholder="Type your name..." />
+  </div>
+  <div class="form-group">
+    <label>Email:</label>
+    <input [(ngModel)]="email" placeholder="Type your email..." />
+  </div>
+  @if (name || email) {
+    <div class="success-box">
+      Hello, <strong>{{ name }}</strong>! Email: <strong>{{ email }}</strong>
+    </div>
+  }
+  <button class="btn" (click)="clearForm()" style="margin-top:12px; background:rgba(239,68,68,0.3)">Clear</button>
+</div>

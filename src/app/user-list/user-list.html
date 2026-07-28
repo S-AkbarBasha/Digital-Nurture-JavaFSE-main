@@ -1,0 +1,81 @@
+<div class="page-title">
+  <span class="badge">EX 10</span>
+  <h1>HTTP Client — REST API</h1>
+  <p>Fetching data from JSONPlaceholder API using HttpClient + Observables</p>
+</div>
+
+@if (loading) {
+  <div class="card" style="text-align:center; padding:40px">
+    <div style="font-size:2rem; animation: spin 1s linear infinite">⟳</div>
+    <p style="color:#64748b; margin-top:12px">Loading users from API...</p>
+  </div>
+}
+
+@if (error) {
+  <div class="card" style="border-color:rgba(239,68,68,0.4)">
+    <p style="color:#f87171">❌ {{ error }}</p>
+    <button class="btn" (click)="loadUsers()" style="margin-top:12px">Retry</button>
+  </div>
+}
+
+@if (!loading && !error) {
+  <div class="card">
+    <h2>👥 Users <span class="tag">{{ users.length }} records</span></h2>
+    <p style="color:#64748b; font-size:0.83rem; margin-bottom:12px">
+      Source: <strong style="color:#a5b4fc">https://jsonplaceholder.typicode.com/users</strong>
+      — Click a row to see details
+    </p>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Username</th><th>Email</th><th>City</th></tr>
+      @for (user of users; track user.id) {
+        <tr (click)="selectUser(user)" style="cursor:pointer"
+            [style.background]="selectedUser?.id === user.id ? 'rgba(99,102,241,0.15)' : ''">
+          <td><span class="tag">{{ user.id }}</span></td>
+          <td><strong>{{ user.name }}</strong></td>
+          <td style="color:#64748b">{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.address.city }}</td>
+        </tr>
+      }
+    </table>
+  </div>
+
+  @if (selectedUser) {
+    <div class="card">
+      <h2>👤 User Details — {{ selectedUser.name }}</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+        <div><span style="color:#64748b">Username</span><p>{{ selectedUser.username }}</p></div>
+        <div><span style="color:#64748b">Email</span><p>{{ selectedUser.email }}</p></div>
+        <div><span style="color:#64748b">Phone</span><p>{{ selectedUser.phone }}</p></div>
+        <div><span style="color:#64748b">Website</span><p>{{ selectedUser.website }}</p></div>
+        <div><span style="color:#64748b">Company</span><p>{{ selectedUser.company.name }}</p></div>
+        <div><span style="color:#64748b">City</span><p>{{ selectedUser.address.city }}</p></div>
+      </div>
+    </div>
+  }
+
+  <div class="card">
+    <h2>💡 How HttpClient Works</h2>
+    <pre style="background:#0f1117; padding:16px; border-radius:8px; color:#4ade80; font-size:0.82rem; overflow:auto">
+// 1. Provide HttpClient in app.config.ts
+provideHttpClient()
+
+// 2. Inject in service
+constructor(private http: HttpClient) {{ '{' }}{{ '}' }}
+
+// 3. Return Observable
+getUsers(): Observable&lt;User[]&gt; {{ '{' }}
+  return this.http.get&lt;User[]&gt;('https://api.example.com/users');
+{{ '}' }}
+
+// 4. Subscribe in component
+this.apiService.getUsers().subscribe({{ '{' }}
+  next: (data) => this.users = data,
+  error: (err) => this.error = err.message
+{{ '}' }});</pre>
+  </div>
+}
+
+<style>
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
