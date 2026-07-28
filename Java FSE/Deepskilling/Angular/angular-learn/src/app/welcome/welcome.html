@@ -1,0 +1,35 @@
+<div class="page-title">
+  <span class="badge">EX 2</span>
+  <h1>{{ title }}</h1>
+  <p>{{ subtitle }}</p>
+</div>
+
+<div class="card">
+  <h2>📦 Component Info</h2>
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Author</td><td>{{ author }}</td></tr>
+    <tr><td>Version</td><td><span class="tag">{{ version }}</span></td></tr>
+    <tr><td>Selector</td><td><span class="tag">app-welcome</span></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>⚡ Key Features</h2>
+  <ul style="list-style:none; padding:0">
+    @for (feature of features; track feature) {
+      <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color:#94a3b8">
+        ✅ {{ feature }}
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="card">
+  <h2>💡 Concepts Learned</h2>
+  <p style="color:#64748b; line-height:1.7">
+    <strong style="color:#a5b4fc">@Component</strong> decorator defines metadata (selector, templateUrl, styleUrl).<br>
+    <strong style="color:#a5b4fc">selector</strong> is used as HTML tag: <code style="color:#fbbf24">&lt;app-welcome&gt;</code><br>
+    <strong style="color:#a5b4fc">Class properties</strong> are bound to the template via interpolation <code style="color:#fbbf24">{{ '{{' }} expr {{ '}}' }}</code>
+  </p>
+</div>

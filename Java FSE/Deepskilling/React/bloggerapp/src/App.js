@@ -1,6 +1,6 @@
-import BookDetails from "./BookDetails";
-import BlogDetails from "./BlogDetails";
-import CourseDetails from "./CourseDetails";
+import BookDetails from "./Components/BookDetails";
+import BlogDetails from "./Components/BlogDetails";
+import CourseDetails from "./Components/CourseDetails";
 
 function App() {
   const showBook = true;
