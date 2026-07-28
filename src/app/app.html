@@ -1,0 +1,23 @@
+<!-- App Shell: Navigation + Router Outlet -->
+<header class="app-header">
+  <div class="brand">
+    <span class="brand-icon">⚡</span>
+    <h1>Angular Hands-On</h1>
+  </div>
+  <nav class="main-nav">
+    <a routerLink="/home"         routerLinkActive="active">🏠 Home</a>
+    <a routerLink="/welcome"      routerLinkActive="active">EX2: Components</a>
+    <a routerLink="/data-binding" routerLinkActive="active">EX3: Binding</a>
+    <a routerLink="/directives"   routerLinkActive="active">EX4: Directives</a>
+    <a routerLink="/pipes"        routerLinkActive="active">EX5: Pipes</a>
+    <a routerLink="/countries"    routerLinkActive="active">EX6: Services</a>
+    <a routerLink="/about"        routerLinkActive="active">EX7: Routing</a>
+    <a routerLink="/register"     routerLinkActive="active">EX8: Forms</a>
+    <a routerLink="/reactive"     routerLinkActive="active">EX9: Reactive</a>
+    <a routerLink="/users"        routerLinkActive="active">EX10: HTTP</a>
+  </nav>
+</header>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

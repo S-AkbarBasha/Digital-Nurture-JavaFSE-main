@@ -1,0 +1,50 @@
+<div class="page-title">
+  <span class="badge">EX 5</span>
+  <h1>Angular Pipes</h1>
+  <p>Built-in pipes and a custom INR format pipe</p>
+</div>
+
+<div class="card">
+  <h2>🔤 String Pipes</h2>
+  <table>
+    <tr><th>Pipe</th><th>Expression</th><th>Result</th></tr>
+    <tr><td><span class="tag">uppercase</span></td><td><code>name | uppercase</code></td><td class="highlight">{{ name | uppercase }}</td></tr>
+    <tr><td><span class="tag">lowercase</span></td><td><code>name | lowercase</code></td><td>{{ name | lowercase }}</td></tr>
+    <tr><td><span class="tag">slice</span></td><td><code>longText | slice:0:15</code></td><td>{{ longText | slice:0:15 }}...</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>🔢 Number & Currency Pipes</h2>
+  <table>
+    <tr><th>Pipe</th><th>Expression</th><th>Result</th></tr>
+    <tr><td><span class="tag">number</span></td><td><code>pi | number:'1.2-4'</code></td><td class="highlight">{{ pi | number:'1.2-4' }}</td></tr>
+    <tr><td><span class="tag">percent</span></td><td><code>ratio | percent:'1.2-2'</code></td><td class="highlight">{{ ratio | percent:'1.2-2' }}</td></tr>
+    <tr><td><span class="tag">currency (USD)</span></td><td><code>salary | currency:'USD'</code></td><td class="highlight">{{ salary | currency:'USD' }}</td></tr>
+    <tr><td><span class="tag">currency (INR)</span></td><td><code>salary | currency:'INR':'symbol'</code></td><td class="highlight">{{ salary | currency:'INR':'symbol':'1.0-0' }}</td></tr>
+    <tr><td><span class="tag">inrFormat (custom)</span></td><td><code>salary | inrFormat</code></td><td class="highlight">{{ salary | inrFormat }}</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>📅 Date Pipe</h2>
+  <table>
+    <tr><th>Format</th><th>Result</th></tr>
+    <tr><td><code>date:'short'</code></td><td>{{ today | date:'short' }}</td></tr>
+    <tr><td><code>date:'medium'</code></td><td>{{ today | date:'medium' }}</td></tr>
+    <tr><td><code>date:'dd/MM/yyyy'</code></td><td class="highlight">{{ today | date:'dd/MM/yyyy' }}</td></tr>
+    <tr><td><code>date:'fullDate'</code></td><td>{{ today | date:'fullDate' }}</td></tr>
+    <tr><td><code>date:'HH:mm:ss'</code></td><td>{{ today | date:'HH:mm:ss' }}</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>🗂️ JSON Pipe — Object Display</h2>
+  <pre style="background:#0f1117; padding:16px; border-radius:8px; color:#4ade80; font-size:0.85rem; overflow:auto">{{ employee | json }}</pre>
+</div>
+
+<div class="card">
+  <h2>🔗 Pipe Chaining</h2>
+  <p style="color:#94a3b8">Expression: <code style="color:#fbbf24">name | uppercase | slice:0:15</code></p>
+  <p class="highlight" style="margin-top:8px">Result: {{ name | uppercase | slice:0:15 }}</p>
+</div>
