@@ -1,0 +1,17 @@
+<div class="page-title">
+  <span class="badge">EX 1 + EX 7</span>
+  <h1>🏠 Angular Hands-On Dashboard</h1>
+  <p>Select an exercise below to explore Angular concepts</p>
+</div>
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap:16px">
+  @for (ex of exercises; track ex.path) {
+    <a [routerLink]="ex.path" style="text-decoration:none">
+      <div class="card" style="cursor:pointer; transition: transform 0.2s" (mouseenter)="card.style.transform='translateY(-4px)'" #card>
+        <div style="font-size:2rem; margin-bottom:8px">{{ ex.icon }}</div>
+        <h2 style="font-size:1rem; margin-bottom:6px">{{ ex.label }}</h2>
+        <p style="color:#64748b; font-size:0.83rem">{{ ex.desc }}</p>
+      </div>
+    </a>
+  }
+</div>

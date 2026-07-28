@@ -1,0 +1,88 @@
+<div class="page-title">
+  <span class="badge">EX 4</span>
+  <h1>Built-in Directives</h1>
+  <p>Structural (&#64;if, &#64;for, &#64;switch) and Attribute (NgClass, NgStyle) directives</p>
+</div>
+
+<!-- @if -->
+<div class="card">
+  <h2>1️⃣ &#64;if / &#64;else — Conditional Rendering</h2>
+  <button class="btn" (click)="toggleLogin()">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
+  <div style="margin-top:12px">
+    @if (isLoggedIn) {
+      <div class="success-box">✅ Welcome! You are logged in.</div>
+    } @else {
+      <p style="color:#f87171">❌ Please login to continue.</p>
+    }
+  </div>
+</div>
+
+<!-- @for -->
+<div class="card">
+  <h2>2️⃣ &#64;for — List Rendering</h2>
+  <table>
+    <tr><th>#</th><th>Flag</th><th>Code</th><th>Country</th></tr>
+    @for (country of countries; track country.code; let i = $index) {
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ country.flag }}</td>
+        <td><span class="tag">{{ country.code }}</span></td>
+        <td>{{ country.name }}</td>
+      </tr>
+    }
+  </table>
+</div>
+
+<!-- @switch -->
+<div class="card">
+  <h2>3️⃣ &#64;switch — Multi-branch Condition</h2>
+  <div style="display:flex; gap:8px; margin-bottom:16px">
+    @for (s of statuses; track s) {
+      <button class="btn" (click)="changeStatus(s)"
+        [style.background]="status === s ? 'rgba(99,102,241,0.5)' : 'rgba(99,102,241,0.15)'">
+        {{ s }}
+      </button>
+    }
+  </div>
+  @switch (status) {
+    @case ('active') {
+      <div class="success-box">🟢 Status: ACTIVE — Service is running</div>
+    }
+    @case ('inactive') {
+      <p style="color:#f87171">🔴 Status: INACTIVE — Service is stopped</p>
+    }
+    @case ('pending') {
+      <p style="color:#fbbf24">🟡 Status: PENDING — Service is starting</p>
+    }
+  }
+</div>
+
+<!-- NgClass -->
+<div class="card">
+  <h2>4️⃣ NgClass — Dynamic CSS Classes</h2>
+  <div style="display:flex; gap:8px; margin-bottom:12px">
+    <button class="btn" (click)="isHighlighted = !isHighlighted">Toggle Highlight</button>
+    <button class="btn" (click)="isBold = !isBold">Toggle Bold</button>
+  </div>
+  <p [ngClass]="{ 'highlight': isHighlighted, 'bold-text': isBold }"
+     style="padding:12px; border-radius:8px; transition:all 0.3s"
+     [style.background]="isHighlighted ? 'rgba(251,191,36,0.1)' : 'transparent'">
+    This text changes styles dynamically using NgClass!
+  </p>
+</div>
+
+<!-- NgStyle -->
+<div class="card">
+  <h2>5️⃣ NgStyle — Dynamic Inline Styles</h2>
+  <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap">
+    <button class="btn" (click)="increaseFontSize()">Font +</button>
+    <button class="btn" (click)="decreaseFontSize()">Font -</button>
+    <button class="btn" (click)="textColor='#4ade80'">Green</button>
+    <button class="btn" (click)="textColor='#f87171'">Red</button>
+    <button class="btn" (click)="textColor='#fbbf24'">Yellow</button>
+    <button class="btn" (click)="textColor='#a5b4fc'">Purple</button>
+  </div>
+  <p [ngStyle]="{ 'color': textColor, 'font-size': fontSize + 'px', 'font-weight': '600', 'transition': 'all 0.3s' }">
+    This text is styled dynamically using NgStyle! ({{ fontSize }}px)
+  </p>
+</div>

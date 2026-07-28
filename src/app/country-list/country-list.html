@@ -1,0 +1,66 @@
+<div class="page-title">
+  <span class="badge">EX 6</span>
+  <h1>Services & Dependency Injection</h1>
+  <p>CountryService injected via constructor — singleton pattern</p>
+</div>
+
+<!-- Search by name -->
+<div class="card">
+  <h2>🔍 Search Countries (by name)</h2>
+  <div style="display:flex; gap:8px">
+    <input [(ngModel)]="searchQuery" placeholder="Type country name..." (input)="onSearch()" style="flex:1" />
+    <button class="btn" (click)="onSearch()">Search</button>
+  </div>
+</div>
+
+<!-- Search by code -->
+<div class="card">
+  <h2>🔎 Find by Country Code (case-insensitive)</h2>
+  <div style="display:flex; gap:8px">
+    <input [(ngModel)]="searchCode" placeholder="e.g. in, US, De..." (input)="onSearchByCode()" style="flex:1; text-transform:uppercase" />
+    <button class="btn" (click)="onSearchByCode()">Find</button>
+  </div>
+  @if (searchCode) {
+    @if (codeResult) {
+      <div class="success-box" style="margin-top:12px">
+        {{ codeResult.flag }} <strong>{{ codeResult.name }}</strong> — Capital: {{ codeResult.capital }}
+      </div>
+    } @else {
+      <p style="color:#f87171; margin-top:12px">❌ No country found for code "{{ searchCode }}"</p>
+    }
+  }
+</div>
+
+<!-- Country Table -->
+<div class="card">
+  <h2>🌍 Country List <span class="tag">{{ filteredCountries.length }} countries</span></h2>
+  <table>
+    <tr><th>Flag</th><th>Code</th><th>Country</th><th>Capital</th><th>Population</th></tr>
+    @for (country of filteredCountries; track country.code) {
+      <tr (click)="selectCountry(country)" style="cursor:pointer"
+          [style.background]="selectedCountry?.code === country.code ? 'rgba(99,102,241,0.15)' : ''">
+        <td>{{ country.flag }}</td>
+        <td><span class="tag">{{ country.code }}</span></td>
+        <td><strong>{{ country.name }}</strong></td>
+        <td>{{ country.capital }}</td>
+        <td>{{ country.population }}</td>
+      </tr>
+    }
+  </table>
+  @if (filteredCountries.length === 0) {
+    <p style="color:#64748b; text-align:center; padding:24px">No countries found</p>
+  }
+</div>
+
+<!-- DI explanation -->
+<div class="card">
+  <h2>💡 How Dependency Injection Works</h2>
+  <pre style="background:#0f1117; padding:16px; border-radius:8px; color:#4ade80; font-size:0.82rem; overflow:auto">
+// CountryService decorated with @Injectable
+@Injectable({{ '{' }} providedIn: 'root' {{ '}' }})   ← Singleton scope
+export class CountryService {{ '{' }} ... {{ '}' }}
+
+// Component uses constructor injection
+constructor(private countryService: CountryService) {{ '{' }}{{ '}' }}
+// Angular's DI system resolves and provides the instance automatically</pre>
+</div>
